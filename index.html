@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Expense Tracker</h1>
+      <p class="subtitle">Keep track of where your money goes</p>
+    </header>
+
+    <section class="balance-card">
+      <span class="balance-label">Total Balance</span>
+      <span id="balance" class="balance-amount">$0.00</span>
+      <div class="balance-breakdown">
+        <div class="breakdown-item">
+          <span class="breakdown-label">Income</span>
+          <span id="income" class="breakdown-amount income">$0.00</span>
+        </div>
+        <div class="breakdown-item">
+          <span class="breakdown-label">Expenses</span>
+          <span id="expenseTotal" class="breakdown-amount expense">$0.00</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <h2>Add Transaction</h2>
+      <form id="expense-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="e.g. Groceries" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="0.00" step="0.01" required />
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" required>
+              <option value="Food">Food</option>
+              <option value="Transport">Transport</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Bills">Bills</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Health">Health</option>
+              <option value="Income">Income</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-add">Add Expense</button>
+      </form>
+    </section>
+
+    <section class="list-card">
+      <div class="list-header">
+        <h2>Transactions</h2>
+        <span id="count" class="count-badge">0</span>
+      </div>
+      <ul id="expense-list" class="expense-list">
+        <li class="empty-state" id="empty-state">No transactions yet. Add one above to get started.</li>
+      </ul>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
